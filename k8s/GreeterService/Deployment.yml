@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeter-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greeter-service
+  template:
+    metadata:
+      labels:
+        app: greeter-service
+    spec:
+      containers:
+        - name: greeter-service
+          image: strugglingtechieregistry.azurecr.io/greeter-service-docker:latest
